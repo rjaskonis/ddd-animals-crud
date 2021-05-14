@@ -33,7 +33,7 @@
         "build": "tsc --build tsconfig.build.json",
         "start:docker": "npm run build && docker-compose up --build",
         "start": "NODE_ENV=production node dist/infrastructure/http/server.js",
-        "test": "jest"
+        "test": "clear && jest"
     },
     "_moduleAliases": {
         "@": "dist"
