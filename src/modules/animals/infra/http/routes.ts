@@ -1,8 +1,9 @@
-import express, { Request, Response } from "express";
+import { routeAdapter } from "@/shared/infra/http/adapter";
+import { Router } from "express";
 import { createAnimalController } from "../../use-cases";
 
-const animalRouter = express.Router();
+const animalRouter = Router();
 
-animalRouter.post("/animals", createAnimalController.execute);
+animalRouter.post("/animals", routeAdapter(createAnimalController));
 
 export { animalRouter };
