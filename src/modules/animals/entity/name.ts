@@ -16,6 +16,7 @@ export class AnimalName extends ValueObject<string> {
     }
 
     static validate(value: string): ValidationResult {
+        if (!value) return { isValid: false, error: "Animal name cannot be null or undefined" };
         if (!value.length) return { isValid: false, error: "Animal name cannot be empty" };
         if (value.length < 3) return { isValid: false, error: "Animal name too short" };
 
